@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int a[] = {1, 2, 1}, n = 3;
+    int sum = 0, i, j, k, count;
+
+    for(i = 0; i < n; i++) {
+        int seen[100] = {0};
+        count = 0;
+
+        for(j = i; j < n; j++) {
+            if(!seen[a[j]]) {
+                seen[a[j]] = 1;
+                count++;
+            }
+            sum += count * count;
+        }
+    }
+
+    printf("Output: %d", sum);
+    return 0;
+}
